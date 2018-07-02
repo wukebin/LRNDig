@@ -16,8 +16,7 @@ import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 // export default Button;
 
-
-export default class Button extends Component {
+class Button extends Component {
     render() {
         return(
             <TouchableOpacity onPress= {this.props.onPress} style={styles.buttonStyle}>
@@ -49,3 +48,5 @@ const styles = StyleSheet.create({
     marginRight: 5
   }
 });
+
+export {Button};

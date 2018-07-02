@@ -5,13 +5,16 @@ import {
     Text,
     View
 } from 'react-native';
+import LoginForm from './components/LoginForm';
+import {Header } from './components/common';
 
 export default class App extends Component {
     render() {
         return (
             <View>
-                <Text>This is the beginning of something yuuuuge</Text>
-            </View>
-        )
+                <Header headerText= "Lär Digital"/>
+              <LoginForm/>
+              </View>
+        );
     }
-}
+};

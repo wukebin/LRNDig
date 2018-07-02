@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
 // Make a component
-export default class Header extends Component {
+class Header extends Component {
     render() {
         return (
             <View style={styles.viewStyle}>
@@ -31,4 +31,4 @@ const styles = StyleSheet.create({
 });
 
 // Make the component available to other parts of the app
-//export default Header;
+export {Header};
