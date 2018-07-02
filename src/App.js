@@ -6,6 +6,7 @@ import {
     View
 } from 'react-native';
 import LoginForm from './components/LoginForm';
+import StudentView from './components/screens/StudentView';
 import {Header } from './components/common';
 import firebase from 'firebase';
 
@@ -26,7 +27,8 @@ export default class App extends Component {
         return (
             <View>
                 <Header headerText= "Lär Digital"/>
-              <LoginForm/>
+              {/* <LoginForm/> */}
+              <StudentView style = {{alignItems: 'center'}}/>
               </View>
         );
     }
