@@ -7,6 +7,9 @@ export default class StudentView extends Component {
     render() {
         return( 
             <Card >
+              
+                    <Header headerText='Joel Flak'/>
+                    
         <CardSection>
             <Button>
                Google

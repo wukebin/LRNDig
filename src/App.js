@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import {
-    Platform,
-    StyleSheet,
-    Text,
     View
 } from 'react-native';
 import LoginForm from './components/LoginForm';
@@ -10,6 +7,7 @@ import StudentView from './components/screens/StudentView';
 import { Header } from './components/common';
 import firebase from 'firebase';
 import TeacherView from './components/screens/TeacherView';
+import TeacherOverview from './components/screens/TeacherOverview';
 import { StackNavigator } from 'react-navigation';
 
 export default class App extends Component {
@@ -27,7 +25,7 @@ export default class App extends Component {
 
     render() {
         return (
-            <AppNavigator />
+            <AppNavigator headerMode = 'none'/>
         );
     }
 };
@@ -35,5 +33,6 @@ export default class App extends Component {
 const AppNavigator = StackNavigator({
     LoginForm: { screen: LoginForm },
     TeacherView: { screen: TeacherView },
-    StudentView: { screen: StudentView }
+    StudentView: { screen: StudentView },
+    Overview: {screen: TeacherOverview}
 })

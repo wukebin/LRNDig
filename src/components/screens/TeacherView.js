@@ -6,7 +6,9 @@ import {Header, Button, Card, CardSection} from '../common';
 export default class TeacherView extends Component {
     state = {
         name: this.props.name, 
+        name: 'Jenny',
     }
+
     render() {
         return(
             <Card>
@@ -18,7 +20,7 @@ export default class TeacherView extends Component {
             <Button> Rätta Prov</Button>
             </CardSection>
             <CardSection>
-            <Button> Översikt </Button>
+            <Button onPress= {()=> this.props.navigation.navigate ('Overview')}> Översikt </Button>
             </CardSection>
             </Card>
         );
