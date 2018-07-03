@@ -37,8 +37,9 @@ export default class App extends Component {
               {/* <LoginForm/> */}
               <StudentView style = {{alignItems: 'center'}}/>
             </View>
-            </Provider>
+            
             <AppNavigator />
+            </Provider>
         );
     }
 };
