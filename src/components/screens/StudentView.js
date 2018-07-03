@@ -1,23 +1,29 @@
 import React, {Component} from 'react';
-import { Text, View, Image, Linking, TouchableOpacity } from 'react-native';
-import { Header, Button, Card, CardSection } from '../common';
+import {  View } from 'react-native';
+import {  Button, Card, CardSection } from '../common';
+
+
+
 //just presentation of data-> Functional
 
 export default class StudentView extends Component {
     render() {
         return( 
+            
+            
+
             <Card >
               
                     <Header headerText='Joel Flak'/>
                     
         <CardSection>
             <Button>
-               Google
+                Skriv test
             </Button>
     
             
             <Button>
-                Facebook
+                Resultat
             </Button>
                 
             </CardSection>
