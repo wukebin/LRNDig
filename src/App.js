@@ -9,6 +9,10 @@ import LoginForm from './components/LoginForm';
 import StudentView from './components/screens/StudentView';
 import {Header } from './components/common';
 import firebase from 'firebase';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducers from './reducers';
+
 
 export default class App extends Component {
 
@@ -25,11 +29,13 @@ export default class App extends Component {
 
     render() {
         return (
+        <Provider store = {createStore(reducers)} > {/* store = keeps the state Provider =  communicate with react */}
             <View>
-                <Header headerText= "Lär Digital"/>
+           <Header headerText= "Lär Digital"/>
               {/* <LoginForm/> */}
               <StudentView style = {{alignItems: 'center'}}/>
-              </View>
+            </View>
+            </Provider>
         );
     }
 };
