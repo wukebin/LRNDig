@@ -12,6 +12,7 @@ import reducers from './reducers';
 
 import TeacherView from './components/screens/TeacherView';
 import TeacherOverview from './components/screens/TeacherOverview';
+import OverviewDetails from './components/screens/OverviewDetails';
 import { StackNavigator } from 'react-navigation';
 
 export default class App extends Component {
@@ -29,18 +30,14 @@ export default class App extends Component {
 
     render() {
         return (
-<<<<<<< HEAD
-            <AppNavigator headerMode = 'none'/>
-=======
-        <Provider store = {createStore(reducers)} > {/* store = keeps the state Provider =  communicate with react */}
-            <View>
-           <Header headerText= "Lär Digital"/>
-              {/* <LoginForm/> */}
-              <StudentView style = {{alignItems: 'center'}}/>
-            </View>
-            </Provider>
+        // <Provider store = {createStore(reducers)} > {/* store = keeps the state Provider =  communicate with react */}
+        //     <View>
+        //    <Header headerText= "Lär Digital"/>
+        //       {/* <LoginForm/> */}
+        //       <StudentView style = {{alignItems: 'center'}}/>
+        //     </View>
+        //     </Provider>
             <AppNavigator />
->>>>>>> 027cee7a9dfd0b69690a6986a8bb42fd6257630c
         );
     }
 };
@@ -49,5 +46,6 @@ const AppNavigator = StackNavigator({
     LoginForm: { screen: LoginForm },
     TeacherView: { screen: TeacherView },
     StudentView: { screen: StudentView },
-    Overview: {screen: TeacherOverview}
+    Overview: {screen: TeacherOverview},
+    Details: {screen: OverviewDetails}
 })

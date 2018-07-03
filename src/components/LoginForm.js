@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet , Image} from 'react-native';
 import { Button, Card, CardSection, Input, Spinner, Header } from './common';
 import firebase from 'firebase';
 
@@ -50,6 +50,8 @@ export default class LoginForm extends Component {
     render() {
         return (
             <Card>
+                <Image source= {require('./images/elephant.jpg')} style = {{ width:100, height:100,alignSelf:'center', resizeMode: 'stretch'}}/>
+               
                 <CardSection>
                     <Input
                         label="Användarnamn"
