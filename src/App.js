@@ -9,10 +9,11 @@ import firebase from 'firebase';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './reducers';
-
 import TeacherView from './components/screens/TeacherView';
 import TeacherOverview from './components/screens/TeacherOverview';
 import { StackNavigator } from 'react-navigation';
+import ResultatList from './components/screens/StudenViewScreens/ResultatList';
+
 
 export default class App extends Component {
 
@@ -29,23 +30,20 @@ export default class App extends Component {
 
     render() {
         return (
-<<<<<<< HEAD
-            <AppNavigator headerMode = 'none'/>
-=======
-        <Provider store = {createStore(reducers)} > {/* store = keeps the state Provider =  communicate with react */}
-            <View>
+
+            
+
+        <Provider store = {createStore(reducers)} >
+            <View>             
            <Header headerText= "Lär Digital"/>
               {/* <LoginForm/> */}
-              <StudentView style = {{alignItems: 'center'}}/>
-            </View>
-            
-            <AppNavigator />
-<<<<<<< HEAD
-            </Provider>
-=======
->>>>>>> 027cee7a9dfd0b69690a6986a8bb42fd6257630c
->>>>>>> 981efb42c37de97f0eb1633c423e88ad854814cb
-        );
+            {/*<StudentView style = {{alignItems: 'center'}}/> */}
+             {/* <ResultatList/> */} 
+              <AppNavigator />    
+            </View>    
+        </Provider>
+        
+    );
     }
 };
 

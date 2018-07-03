@@ -1,11 +1,13 @@
+import React, {Component} from 'react';
 import {FlatList} from 'react-native';
 import {connect } from 'react-redux';
 import ResultatItem from './ResultatItem';
 
 
-class Resultat extends Component {
-    renderItem(prov) {
+class ResultatList extends Component {
+    renderItem(provx) {
 
+            return <ResultatItem provx = {provx.item}/>;
         
     }
     render() {
@@ -14,7 +16,7 @@ class Resultat extends Component {
             <FlatList 
             data = {this.props.prov}
             renderItem = {this.renderItem}
-            keyExtractor = {prov => prov.id}
+            keyExtractor = {provx => provx.id}
             />
         )
     }
@@ -28,4 +30,4 @@ const mapStateToProps = state => {
 
 };
 
-export default connect(mapStateToProps)(Resultat);
+export default connect(mapStateToProps)(ResultatList);

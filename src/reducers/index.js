@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import ProvReducer from './ProvReducer';
+import ResultatReducer from './ResultatReducer';
 export default combineReducers ( {
-    prov: ProvReducer
+    prov: ResultatReducer //Prov = Libraries
 
 }); 

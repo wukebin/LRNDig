@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
-//Section 13 Lecture 94
+import {Text } from 'react-native';
+import { CardSection } from '../../common';
 
 class ResultatItem extends Component {
     render() {
-
+        return (
+            <CardSection>
+                <Text>{this.props.provx.title}</Text>
+            </CardSection>
+        );
     }
 }
 
