@@ -11,6 +11,7 @@ import { createStore } from 'redux';
 import reducers from './reducers';
 import TeacherView from './components/screens/TeacherView';
 import TeacherOverview from './components/screens/TeacherOverview';
+import OverviewDetails from './components/screens/OverviewDetails';
 import { StackNavigator } from 'react-navigation';
 import ResultatList from './components/screens/StudenViewScreens/ResultatList';
 
@@ -30,6 +31,7 @@ export default class App extends Component {
 
     render() {
         return (
+<<<<<<< HEAD
 
             
 
@@ -44,6 +46,17 @@ export default class App extends Component {
         </Provider>
         
     );
+=======
+        // <Provider store = {createStore(reducers)} > {/* store = keeps the state Provider =  communicate with react */}
+        //     <View>
+        //    <Header headerText= "Lär Digital"/>
+        //       {/* <LoginForm/> */}
+        //       <StudentView style = {{alignItems: 'center'}}/>
+        //     </View>
+        //     </Provider>
+            <AppNavigator />
+        );
+>>>>>>> c75da5ed456e74c730a69ff1bf62b227198a6419
     }
 };
 
@@ -51,5 +64,6 @@ const AppNavigator = StackNavigator({
     LoginForm: { screen: LoginForm },
     TeacherView: { screen: TeacherView },
     StudentView: { screen: StudentView },
-    Overview: {screen: TeacherOverview}
+    Overview: {screen: TeacherOverview},
+    Details: {screen: OverviewDetails}
 })
