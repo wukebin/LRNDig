@@ -13,6 +13,9 @@ export default class StudentView extends Component {
             
 
             <Card >
+              
+                    <Header headerText='Joel Flak'/>
+                    
         <CardSection>
             <Button>
                 Skriv test
