@@ -6,6 +6,7 @@ import {
     View
 } from 'react-native';
 import LoginForm from './components/LoginForm';
+import StudentView from './components/screens/StudentView';
 import {Header } from './components/common';
 import firebase from 'firebase';
 import TeacherView from './components/screens/TeacherView';
@@ -25,11 +26,19 @@ export default class App extends Component {
 
     render() {
         return (
+<<<<<<< HEAD
             <TeacherView name='Jenny'/>
             // <View>
             //     <Header headerText= "Lär Digital"/>
             //   <LoginForm/>
             //   </View>
+=======
+            <View>
+                <Header headerText= "Lär Digital"/>
+              {/* <LoginForm/> */}
+              <StudentView style = {{alignItems: 'center'}}/>
+              </View>
+>>>>>>> eb84c888640ceac4be07ff0bcfb8cfd46ce4611c
         );
     }
 };
