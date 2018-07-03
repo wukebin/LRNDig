@@ -8,22 +8,15 @@ export default class StudentView extends Component {
         return( 
             <Card >
         <CardSection>
-        <View style = {{flexDirection: 'row'}}>
             <Button>
                Google
             </Button>
-            </View>
-            </CardSection>
+    
             
-            <CardSection>
-
-            <View style = {{flexDirection: 'row'}}>
-                
             <Button>
                 Facebook
             </Button>
                 
-            </View>
             </CardSection>
     
     </Card>)
