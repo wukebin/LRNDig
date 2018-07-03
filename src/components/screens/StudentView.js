@@ -14,22 +14,15 @@ export default class StudentView extends Component {
 
             <Card >
         <CardSection>
-        <View style = {{flexDirection: 'row'}}>
             <Button>
                 Skriv test
             </Button>
-            </View>
-            </CardSection>
+    
             
-            <CardSection>
-
-            <View style = {{flexDirection: 'row'}}>
-                
             <Button>
                 Resultat
             </Button>
                 
-            </View>
             </CardSection>
     
     </Card>)

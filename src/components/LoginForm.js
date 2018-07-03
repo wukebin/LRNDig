@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {Text, StyleSheet} from 'react-native';
-import {Button, Card, CardSection, Input, Spinner} from './common';
+import React, { Component } from 'react';
+import { Text, StyleSheet } from 'react-native';
+import { Button, Card, CardSection, Input, Spinner, Header } from './common';
 import firebase from 'firebase';
 
 export default class LoginForm extends Component {
@@ -8,74 +8,68 @@ export default class LoginForm extends Component {
 
     state = {
         email: '',
-        password:'',
-        error:'',
-        loading:false,
+        password: '',
+        error: '',
+        loading: false,
     };
 
     renderButton() {
-        if(this.state.loading) {
-            return <Spinner size="small"/>
+        if (this.state.loading) {
+            return <Spinner size="small" />
         }
 
         return (
             <Button onPress={this.onButtonPress.bind(this)}>
-            Log in
+                Log in
             </Button>
         );
     }
     onButtonPress() {
-        const {email,password } =this.state;
-        this.setState({error:'',loading:true})
+        const { email, password } = this.state;
+        this.setState({ error: '', loading: true })
         firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(this.loginSuccess.bind(this))
-        .catch(()=> {
-            firebase.auth().createUserWithEmailAndPassword(email,password)
             .then(this.loginSuccess.bind(this))
-            .catch(this.loginFailed.bind(this));
-        }
-    
-    );
+            .catch(() => {
+                firebase.auth().createUserWithEmailAndPassword(email, password)
+                    .then(this.loginSuccess.bind(this))
+                    .catch(this.loginFailed.bind(this));
+            }
+
+            );
     }
 
-    loginSuccess(){
-        this.setState({loading:false, email:'',password:'', error:''})
+    loginSuccess() {
+        this.setState({ loading: false, email: '', password: '', error: '' })
     }
 
     loginFailed() {
-        this.setState({loading:false, error: 'Inloggning misslyckades.', email:'', password:''})
+        this.setState({ loading: false, error: 'Fel användarnamn eller lösenord.', email: '', password: '' })
     }
 
 
     render() {
-        return(
-            <Card>               
+        return (
+            <Card>
                 <CardSection>
                     <Input
-                    label = "Användarnamn"
-                    value = {this.state.email}
-                    onChangeText={email => this.setState({email})}
-                    placeHolder='abc123@hotmail.com'
+                        label="Användarnamn"
+                        value={this.state.email}
+                        onChangeText={email => this.setState({ email })}
+                        placeHolder='abc123@hotmail.com'
                     />
                 </CardSection>
 
                 <CardSection>
                     <Input
-                    label = "Lösenord"
-                    value = {this.state.password}
-                    onChangeText= {password => this.setState({password})}
-                    placeHolder= '•••••••'
-                    secret
+                        label="Lösenord"
+                        value={this.state.password}
+                        onChangeText={password => this.setState({ password })}
+                        placeHolder='•••••••'
+                        secret
                     />
                 </CardSection>
 
-                <Text style = {styles.errorText}>
-                    {this.state.error}
-                </Text>
 
-                <Text style= {styles.successText}>
-                {this.state.success}
-                </Text>
 
                 <CardSection>
                     {this.renderButton()}
@@ -83,6 +77,14 @@ export default class LoginForm extends Component {
                     Log In
                     </Button> */}
                 </CardSection>
+
+                <CardSection style={{ flexDirection: 'row' }}>
+                    <Button onPress={() => this.props.navigation.navigate('TeacherView', { name: 'Jenny' })} />
+                    <Button onPress={() => this.props.navigation.navigate('StudentView')} />
+                </CardSection>
+                <Text style={styles.errorText}>
+                    {this.state.error}
+                </Text>
             </Card>
         );
     }

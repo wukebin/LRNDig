@@ -22,8 +22,12 @@ const styles = {
     elevation: 1,
     marginLeft: 5,
     marginRight: 5,
+<<<<<<< HEAD
     marginTop: 200
     
+=======
+    marginTop: 10
+>>>>>>> b8ce5390d420877aedb29dbe911fd44ea70affdf
   }
 };
 
