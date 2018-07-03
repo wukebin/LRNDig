@@ -31,6 +31,7 @@ class Button extends Component {
 const styles = StyleSheet.create({
   textStyle: {
     alignSelf: 'center',
+    justifyContent: 'center',
     color: '#007aff',
     fontSize: 16,
     fontWeight: '600',
