@@ -9,15 +9,12 @@ import LoginForm from './components/LoginForm';
 import StudentView from './components/screens/StudentView';
 import { Header } from './components/common';
 import firebase from 'firebase';
-<<<<<<< HEAD
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './reducers';
 
-=======
 import TeacherView from './components/screens/TeacherView';
 import { StackNavigator } from 'react-navigation';
->>>>>>> b8ce5390d420877aedb29dbe911fd44ea70affdf
 
 export default class App extends Component {
 
@@ -34,7 +31,6 @@ export default class App extends Component {
 
     render() {
         return (
-<<<<<<< HEAD
         <Provider store = {createStore(reducers)} > {/* store = keeps the state Provider =  communicate with react */}
             <View>
            <Header headerText= "Lär Digital"/>
@@ -42,9 +38,7 @@ export default class App extends Component {
               <StudentView style = {{alignItems: 'center'}}/>
             </View>
             </Provider>
-=======
             <AppNavigator />
->>>>>>> b8ce5390d420877aedb29dbe911fd44ea70affdf
         );
     }
 };
