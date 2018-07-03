@@ -20,7 +20,7 @@ export default class LoginForm extends Component {
 
         return (
             <Button onPress={this.onButtonPress.bind(this)}>
-                Log in
+                Logga in
             </Button>
         );
     }
