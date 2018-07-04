@@ -14,8 +14,9 @@ class ResultatItem extends Component {
 
 const styles = {
     titleStyle: {
-        fontSize: 16,
-        fontColor: '#e6e6e6'
+        fontSize: 35,
+       
+        
     }
 }
 

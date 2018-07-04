@@ -54,7 +54,7 @@ const AppNavigator = StackNavigator({
     LoginForm: { screen: LoginForm },
     TeacherView: { screen: TeacherView },
     StudentView: { screen: StudentView },
-    ResultatList: { StudentViewScreens: ResultatList},
+    ResultatList: { screen: ResultatList},
     Overview: {screen: TeacherOverview},
     Details: {screen: OverviewDetails}
 })
