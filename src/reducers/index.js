@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import ProvReducer from './ProvReducer';
+import ResultatReducer from './ResultatReducer';
 import ElevReducer from './ElevReducer';
 export default combineReducers ( {
-    prov: ProvReducer,
+    prov: ResultatReducer,
     elev: ElevReducer
 }); 
