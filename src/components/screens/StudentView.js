@@ -22,7 +22,7 @@ export default class StudentView extends Component {
             </Button>
     
             
-            <Button>
+            <Button onPress= {()=> this.props.navigation.navigate ('ResultatList')}>
                 Resultat
             </Button>
                 

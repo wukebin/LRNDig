@@ -6,9 +6,16 @@ class ResultatItem extends Component {
     render() {
         return (
             <CardSection>
-                <Text>{this.props.provx.title}</Text>
+                <Text style = {styles.titleStyle}>{this.props.provx.title}</Text>
             </CardSection>
         );
+    }
+}
+
+const styles = {
+    titleStyle: {
+        fontSize: 16,
+        fontColor: '#e6e6e6'
     }
 }
 

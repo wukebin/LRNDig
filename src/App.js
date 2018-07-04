@@ -35,14 +35,15 @@ export default class App extends Component {
             
 
         <Provider store = {createStore(reducers)} >
-            <View>             
+           {/* <View>             
            <Header headerText= "Lär Digital"/>
              <LoginForm/> 
-            {/*<StudentView style = {{alignItems: 'center'}}/> */}
+            <StudentView style = {{alignItems: 'center'}}/> 
             
-             {/* <ResultatList/> */} 
+             <ResultatList/> 
+            </View> */} 
               <AppNavigator />    
-            </View>    
+                
         </Provider>
         
     );
@@ -53,6 +54,7 @@ const AppNavigator = StackNavigator({
     LoginForm: { screen: LoginForm },
     TeacherView: { screen: TeacherView },
     StudentView: { screen: StudentView },
+    ResultatList: { StudentViewScreens: ResultatList},
     Overview: {screen: TeacherOverview},
     Details: {screen: OverviewDetails}
 })
