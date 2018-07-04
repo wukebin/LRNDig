@@ -37,9 +37,10 @@ export default class App extends Component {
         <Provider store = {createStore(reducers)} >
             <View>             
            <Header headerText= "Lär Digital"/>
-              {/* <LoginForm/> */}
+             <LoginForm/> 
             {/*<StudentView style = {{alignItems: 'center'}}/> */}
-             <ResultatList/>
+            
+             {/* <ResultatList/> */} 
               <AppNavigator />    
             </View>    
         </Provider>

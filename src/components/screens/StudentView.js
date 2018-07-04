@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {  View } from 'react-native';
-import { Header, Button, Card, CardSection } from '../common';
+import { Button, Card, CardSection } from '../common';
 
 
 
