@@ -50,7 +50,7 @@ export default class LoginForm extends Component {
     render() {
         return (
             <Card>
-                <Image source= {require('./images/elephant.jpg')} style = {{ width:100, height:100,alignSelf:'center', resizeMode: 'stretch'}}/>
+                <Image source= {require('./images/elephant.jpg')} style = {{ width:100, height:100,alignSelf:'center'}}/>
                
                 <CardSection>
                     <Input
