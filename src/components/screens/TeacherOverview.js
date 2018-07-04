@@ -41,7 +41,7 @@ export default class TeacherOverview extends Component {
             </TouchableHighlight>
         );
     }
-
+    //Shit comment
     render() {
       return (
         <ListView
