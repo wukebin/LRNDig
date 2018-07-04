@@ -31,7 +31,6 @@ export default class App extends Component {
 
     render() {
         return (
-<<<<<<< HEAD
 
             
 
@@ -40,23 +39,12 @@ export default class App extends Component {
            <Header headerText= "Lär Digital"/>
               {/* <LoginForm/> */}
             {/*<StudentView style = {{alignItems: 'center'}}/> */}
-             {/* <ResultatList/> */} 
+             <ResultatList/>
               <AppNavigator />    
             </View>    
         </Provider>
         
     );
-=======
-        // <Provider store = {createStore(reducers)} > {/* store = keeps the state Provider =  communicate with react */}
-        //     <View>
-        //    <Header headerText= "Lär Digital"/>
-        //       {/* <LoginForm/> */}
-        //       <StudentView style = {{alignItems: 'center'}}/>
-        //     </View>
-        //     </Provider>
-            <AppNavigator />
-        );
->>>>>>> c75da5ed456e74c730a69ff1bf62b227198a6419
     }
 };
 
