@@ -14,7 +14,7 @@ import TeacherOverview from './components/screens/TeacherOverview';
 import OverviewDetails from './components/screens/OverviewDetails';
 import { StackNavigator } from 'react-navigation';
 import ResultatList from './components/screens/StudenViewScreens/ResultatList';
-
+import DatabaseReadTest from './components/screens/DatabaseReadTest';
 
 export default class App extends Component {
 
@@ -32,7 +32,7 @@ export default class App extends Component {
     render() {
         return (
 
-            
+      
 
         <Provider store = {createStore(reducers)} >
            {/* <View>             
@@ -49,6 +49,7 @@ export default class App extends Component {
     );
     }
 };
+
 
 const AppNavigator = StackNavigator({
     LoginForm: { screen: LoginForm },

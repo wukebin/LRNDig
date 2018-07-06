@@ -1,7 +1,7 @@
 import React, {Component}  from 'react';
 import {Text, View, StyleSheet, ListView, TouchableHighlight} from 'react-native';
 import {Header, Button, Card, CardSection} from '../common';
-
+import firebase from 'firebase';
 
 export default class TeacherOverview extends Component {
     constructor() {
@@ -19,6 +19,7 @@ export default class TeacherOverview extends Component {
 
     fetchUsers() {
         fetch('https://jsonplaceholder.typicode.com/users')
+        
         .then((response) => response.json())
         .then((response) => {
             this.setState({
@@ -36,12 +37,11 @@ export default class TeacherOverview extends Component {
         return (
             <TouchableHighlight onPress={()=> this.getDetails(user)}>
             <View style={styles.row}>
-                <Text style={styles.rowText}>{user.name}: {user.username}</Text>
+                <Text style={styles.rowText}>{user.name}: {user.email}</Text>
             </View>
             </TouchableHighlight>
         );
     }
-    //Shit comment
     render() {
       return (
         <ListView
