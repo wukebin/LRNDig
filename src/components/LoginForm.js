@@ -35,7 +35,9 @@ export default class LoginForm extends Component {
     loginSuccess() {
         var user = firebase.auth().currentUser.uid;
         this.setState({loading:false});
-        if (user == 'fd14Qlq7zza9KPzAcB0Q3To58TA2') {
+        //TODO
+        //Here we should use custom claims/tokens to authorize, name Jenny and uID is hard coded rn
+        if (user == 'cwrnu3yNaQTD785JRcoROA4XKMD2') {
             this.props.navigation.navigate('TeacherView', {name:'Jenny'});
         }
         else {
