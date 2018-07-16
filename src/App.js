@@ -17,17 +17,8 @@ import { StackNavigator } from 'react-navigation';
 import ResultatList from './components/screens/StudenViewScreens/ResultatList';
 import DatabaseReadTest from './components/screens/DatabaseReadTest';
 
-<<<<<<< HEAD
 var config = {
     apiKey: "AIzaSyDsEbcjz7pEuZx5Xj47RyIYxVonSNpWUJo",
-=======
-
-export default class App extends Component {
-    componentWillMount() {
-        firebase.initializeApp({
-            
-            apiKey: "AIzaSyDsEbcjz7pEuZx5Xj47RyIYxVonSNpWUJo",
->>>>>>> studentBranch1
             authDomain: "lrndig-fd676.firebaseapp.com",
             databaseURL: "https://lrndig-fd676.firebaseio.com",
             projectId: "lrndig-fd676",
