@@ -30,7 +30,7 @@ export default class TeacherOverview extends Component {
     }
 
     fetchUsers(ref) {
-        ref.once('value', (dataSnapshot) => {
+        ref.orderByChild('name').once('value', (dataSnapshot) => {
             var students = [];
             dataSnapshot.forEach((child) => {
                 students.push({
@@ -60,18 +60,23 @@ export default class TeacherOverview extends Component {
 
     renderContent() {
         if (this.state.loading) {
-            return ( <Spinner size="large"/>)
+            return (<Spinner size="large" />
+            )
         }
-        return(
-             <ListView
+        return (
+            <View>
+            <Header headerText="Elever" />
+
+            <ListView
                 dataSource={this.state.userDataSource}
                 renderRow={this.renderRow.bind(this)}
             />
+            </View>
         )
     }
     render() {
         return (
-           this.renderContent()
+            this.renderContent()
         );
     }
 }
