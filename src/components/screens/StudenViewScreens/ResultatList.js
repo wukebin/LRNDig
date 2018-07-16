@@ -7,7 +7,7 @@ import ResultatItem from './ResultatItem';
 class ResultatList extends Component {
     renderItem(provx) {
 
-            return <ResultatItem provx = {provx.item}/>;
+            return <ResultatItem  provx = {provx.item}/>;
         
     }
     render() {
@@ -29,5 +29,7 @@ const mapStateToProps = state => {
     };
 
 };
+
+
 
 export default connect(mapStateToProps)(ResultatList);

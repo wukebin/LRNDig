@@ -12,6 +12,7 @@ import reducers from './reducers';
 import TeacherView from './components/screens/TeacherView';
 import TeacherOverview from './components/screens/TeacherOverview';
 import OverviewDetails from './components/screens/OverviewDetails';
+import CreateTestView from './components/screens/CreateTestView';
 import { StackNavigator } from 'react-navigation';
 import ResultatList from './components/screens/StudenViewScreens/ResultatList';
 import DatabaseReadTest from './components/screens/DatabaseReadTest';
