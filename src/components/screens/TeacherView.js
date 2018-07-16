@@ -5,8 +5,7 @@ import {Header, Button, Card, CardSection} from '../common';
 
 export default class TeacherView extends Component {
     state = {
-        name: this.props.name, 
-        name: 'Jenny'
+        name: this.props.navigation.state.params.name, 
     }
 
     render() {
