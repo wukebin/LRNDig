@@ -5,13 +5,12 @@ import { Card, CardSection, QuestionInput, Button } from './';
  class Question extends Component {
     state = {
         question:
-        { 'question': '', 'id': this.props.id },
-    answer: [
+        { 'question': '', 'id': this.props.id, answers: [
         { 'answer': '', 'alt': 'a', 'corr': false, 'q-id': this.props.id },
         { 'answer': '', 'alt': 'b', 'corr': false, 'q-id': this.props.id },
         { 'answer': '', 'alt': 'c', 'corr': false, 'q-id': this.props.id },
         { 'answer': '', 'alt': 'd', 'corr': false, 'q-id': this.props.id },]
-    }
+    }}
 
      onSubmitEditing = () => {
         <CardSection>

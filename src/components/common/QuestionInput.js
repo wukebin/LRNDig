@@ -7,19 +7,13 @@ class QuestionInput extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            TextS: [],
             textInput: [],
             i: 0,
             checked: false
         }
     }
 
-    onButtonPress = (key) => {
-        let TextS = this.state.TextS;
-        TextS.push(<View><Text style={styles.svarStyle}>Svarsalternativ {this.state.i}</Text><TextInput key={key} /></View>)
-
-        this.setState({ TextS })
-    };
+ 
 
     addTextInput = (key) => {
         let textInput = this.state.textInput;
