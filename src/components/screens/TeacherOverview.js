@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, ListView, TouchableHighlight } from 'react-native';
-import { Header, Button, Card, CardSection } from '../common';
+import { Header, Button, Card, CardSection, Spinner } from '../common';
 import firebase from 'firebase';
 
 var config = {
@@ -17,10 +17,10 @@ export default class TeacherOverview extends Component {
     constructor() {
         super();
         this.path = firebase.database().ref('users');
-        super();
         const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
         this.state = {
             userDataSource: ds,
+            loading: true
         };
 
     }
@@ -30,7 +30,7 @@ export default class TeacherOverview extends Component {
     }
 
     fetchUsers(ref) {
-        ref.once('value', (dataSnapshot) => {
+        ref.orderByChild('name').once('value', (dataSnapshot) => {
             var students = [];
             dataSnapshot.forEach((child) => {
                 students.push({
@@ -39,7 +39,7 @@ export default class TeacherOverview extends Component {
                 })
             })
 
-            this.setState({ userDataSource: this.state.userDataSource.cloneWithRows(students) })
+            this.setState({ userDataSource: this.state.userDataSource.cloneWithRows(students), loading: false })
         })
     }
 
@@ -57,13 +57,26 @@ export default class TeacherOverview extends Component {
             </TouchableHighlight>
         );
     }
-    render() {
+
+    renderContent() {
+        if (this.state.loading) {
+            return (<Spinner size="large" />
+            )
+        }
         return (
+            <View>
+            <Header headerText="Elever" />
+
             <ListView
                 dataSource={this.state.userDataSource}
                 renderRow={this.renderRow.bind(this)}
             />
-
+            </View>
+        )
+    }
+    render() {
+        return (
+            this.renderContent()
         );
     }
 }

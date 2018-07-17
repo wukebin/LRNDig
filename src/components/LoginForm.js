@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet , Image} from 'react-native';
-import { Button, Card, CardSection, Input, Spinner, Header } from './common';
+import {Text, StyleSheet , Image} from 'react-native';
+import {Button, Card, CardSection, Input, Spinner, Header } from './common';
 import firebase from 'firebase';
 
 export default class LoginForm extends Component {
@@ -29,17 +29,20 @@ export default class LoginForm extends Component {
         this.setState({ error: '', loading: true })
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(this.loginSuccess.bind(this))
-            .catch(() => {
-                firebase.auth().createUserWithEmailAndPassword(email, password)
-                    .then(this.loginSuccess.bind(this))
-                    .catch(this.loginFailed.bind(this));
-            }
-
-            );
+            .catch(this.loginFailed.bind(this));
     }
 
     loginSuccess() {
-        this.setState({ loading: false, email: '', password: '', error: '' })
+        var user = firebase.auth().currentUser.uid;
+        this.setState({loading:false});
+        //TODO
+        //Here we should use custom claims/tokens to authorize, name Jenny and uID is hard coded rn
+        if (user == 'cwrnu3yNaQTD785JRcoROA4XKMD2') {
+            this.props.navigation.navigate('TeacherView', {name:'Jenny'});
+        }
+        else {
+            this.props.navigation.navigate('StudentView');   
+        } 
     }
 
     loginFailed() {
