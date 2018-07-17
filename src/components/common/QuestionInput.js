@@ -9,7 +9,10 @@ class QuestionInput extends Component {
         this.state = {
             textInput: [],
             i: 0,
+            questions: [],
             checked: false
+            
+            
         }
     }
 
@@ -17,15 +20,17 @@ class QuestionInput extends Component {
 
     addTextInput = (key) => {
         let textInput = this.state.textInput;
+        let questions = this.state.questions;
         let i = (this.state.i + 1);
         textInput.push(
         <View>
             <Text style={styles.textStyle}>Fråga {i}</Text>
             <TextInput key={key} />
-        
             <AnswerInput />
         </View>);
-        this.setState({ textInput, i })
+        questions.push(key);
+
+        this.setState({ textInput, i, questions })
 
     }
 
@@ -33,11 +38,11 @@ class QuestionInput extends Component {
         return (
             <View style={styles.containerStyle1}>
             
-               {this.state.textInput.map((value, index) => { return value })}
+            {this.state.textInput.map((value, index) => { return value })}
                
                 <View style={styles.containerStyle}>
 
-                    <Button onPress={() => this.addTextInput(this.state.textInput.length)}>
+                    <Button onPress={() => this.addTextInput(this.state.i)}>
                         Ny fråga
                     </Button>
 
@@ -45,7 +50,7 @@ class QuestionInput extends Component {
                 
                 <Button>
                     Submit
-                    </Button>
+                </Button>
 
 
             </View>
