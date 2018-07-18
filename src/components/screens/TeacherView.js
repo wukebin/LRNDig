@@ -21,6 +21,9 @@ export default class TeacherView extends Component {
                     centerComponent={{ text: this.state.name, style: { color: '#fff' } }}
                     rightComponent={{ icon: 'home', color: '#fff' }}
                 />
+            
+
+            
                 <Button
                     onPress={() => this.props.navigation.navigate('CreateTestView')}
                     title='Skapa Prov'
@@ -30,16 +33,20 @@ export default class TeacherView extends Component {
                     icon={{ name: 'queue' }}
                     borderRadius={10}
                 />
-                <Divider />
+                
 
+                
                 <Button
                     raised
                     large
                     title='Rätta Prov'
                     backgroundColor='#2f7399'
+                    icon = {{ name: 'done'}}
                     borderRadius={10}
                 />
-<Divider />
+                
+
+                
                 <Button
                     onPress={() => this.props.navigation.navigate('Overview')}
                     title='Översikt'
@@ -49,7 +56,6 @@ export default class TeacherView extends Component {
                     backgroundColor='#2f7399'
                     borderRadius={10}
                 />
-
             </Card>
         );
     }
