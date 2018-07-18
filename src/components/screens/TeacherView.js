@@ -22,6 +22,7 @@ export default class TeacherView extends Component {
                 <Button
                     onPress={() => this.props.navigation.navigate('CreateTestView')}
                     title='Skapa Prov'
+                    containerViewStyle = {{marginBottom: 5, marginTop: 5}}
                     raised
                     large
                     backgroundColor='#2f7399'
@@ -34,6 +35,7 @@ export default class TeacherView extends Component {
                 <Button
                     raised
                     large
+                    containerViewStyle = {{marginBottom: 5}}
                     title='Rätta Prov'
                     backgroundColor='#2f7399'
                     icon = {{ name: 'done'}}
@@ -44,6 +46,7 @@ export default class TeacherView extends Component {
                 
                 <Button
                     onPress={() => this.props.navigation.navigate('Overview')}
+                    containerViewStyle = {{marginBottom: 5}}
                     title='Översikt'
                     large
                     raised
