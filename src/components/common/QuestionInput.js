@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, ScrollView } from 'react-native';
-import {Button, AnswerInput} from './';
+import { AnswerInput} from './';
+import { Button } from 'react-native-elements'
 
 
 class QuestionInput extends Component {
@@ -40,17 +41,29 @@ class QuestionInput extends Component {
             
             {this.state.textInput.map((value, index) => { return value })}
                
-                <View style={styles.containerStyle}>
-
-                    <Button onPress={() => this.addTextInput(this.state.i)}>
-                        Ny fråga
-                    </Button>
-
-                </View>
                 
-                <Button>
-                    Submit
-                </Button>
+
+                    <Button onPress={() => this.addTextInput(this.state.i)}
+                    large
+                    title='Ny fråga'
+                    backgroundColor='#2f7399'
+                    raised
+                    borderRadius={10}
+                    containerViewStyle={{ marginBottom: 4,
+                    }}
+                    />
+
+                
+                
+                <Button
+                large
+                title='Submit'
+                backgroundColor='#2f7399'
+                raised
+                leftIcon={{name: 'publish'}}
+                borderRadius={10}
+                
+                />
 
 
             </View>
