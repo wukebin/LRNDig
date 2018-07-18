@@ -69,6 +69,7 @@ const AppNavigator = StackNavigator({
     ResultatList: { screen: ResultatList},
     Overview: {screen: TeacherOverview},
     Details: {screen: OverviewDetails},
+    CreateTestView: {screen: CreateTestView}
  },
   {headerMode :'none'}
 
