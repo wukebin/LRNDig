@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput } from 'react-native';
-import {Button} from './';
-import { CheckBox } from 'react-native-elements';
+import { CheckBox, Button } from 'react-native-elements';
 
 class AnswerInput extends Component {
     constructor(props) {
@@ -38,11 +37,14 @@ class AnswerInput extends Component {
         return (
             <View style={styles.containerStyle1}>
                 {this.state.answers.map((value, index) => { return value })}
-                <View style={styles.containerStyle}>
-                    <Button onPress={() => this.onButtonPress(this.state.answers.lenght)}>
-                        Nytt svar
-                    </Button>
-                </View>
+                {/* <View style={styles.containerStyle}> */}
+                    <Button onPress={() => this.onButtonPress(this.state.answers.lenght)}
+                    title='Nytt svar'
+                    backgroundColor='#2f7399'
+                    raised
+                    borderRadius={10}
+                    />
+                {/* </View> */}
             </View>
 
         );
