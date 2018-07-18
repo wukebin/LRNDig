@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import {Text, StyleSheet , Image} from 'react-native';
-import {Button, Card, CardSection, Input, Spinner, Header } from './common';
+import {Card, CardSection, Input, Spinner, Header } from './common';
+import {Button, Icon, Tile } from 'react-native-elements';
 import firebase from 'firebase';
+
 
 export default class LoginForm extends Component {
 
@@ -19,9 +21,19 @@ export default class LoginForm extends Component {
         }
 
         return (
-            <Button onPress={this.onButtonPress.bind(this)}>
-                Logga in
-            </Button>
+            <Button 
+            onPress={this.onButtonPress.bind(this)}
+            containerViewStyle = {{flex: 1, justifyContent: 'center', alignSelf: 'center'}}
+            title='Logga in'
+            raised
+            large
+            backgroundColor='#2f7399'
+            icon={{ name: 'input' }}
+            borderRadius={10}
+            
+          />
+  
+               
         );
     }
     onButtonPress() {
@@ -52,8 +64,15 @@ export default class LoginForm extends Component {
 
     render() {
         return (
+            
             <Card>
-                <Image source= {require('./images/elephant.jpg')} style = {{ width:100, height:100,alignSelf:'center'}}/>
+                <Tile
+                imageSrc = {require('./images/elephant.jpg')}
+                height = {250}
+                imageContainerStyle = {{borderBottomWidth:4, borderBottomColor: '#e6e6e6'
+                }} 
+                />
+                {/* <Image source= {require('./images/elephant.jpg')} style = {{ width:100, height:100,alignSelf:'center'}}/> */}
                
                 <CardSection>
                     <Input
@@ -83,9 +102,26 @@ export default class LoginForm extends Component {
                     </Button> */}
                 </CardSection>
 
-                <CardSection style={{ flexDirection: 'row' }}>
-                    <Button onPress={() => this.props.navigation.navigate('TeacherView', { name: 'Jenny' })} />
-                    <Button onPress={() => this.props.navigation.navigate('StudentView')} />
+                <CardSection 
+                style={{ 
+                flex: 1,
+                flexDirection: 'row',
+                }}>
+                    <Icon
+                    raised
+                    size = {50}
+                    backgroundColor='#2f7399'
+                    name ='school'
+                    onPress={() => this.props.navigation.navigate('TeacherView', { name: 'Jenny' })}
+                    />
+
+                    <Icon
+                    raised
+                    size = {50}
+                    large
+                    backgroundColor='#2f7399'
+                    name ='group'
+                    onPress={() => this.props.navigation.navigate('StudentView')} />
                 </CardSection>
                 <Text style={styles.errorText}>
                     {this.state.error}
