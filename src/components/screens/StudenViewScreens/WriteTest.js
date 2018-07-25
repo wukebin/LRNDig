@@ -1,7 +1,17 @@
 import React, {Component} from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, View} from 'react-native';
 import {connect } from 'react-redux';
 import firebase from 'firebase';
 
 
-class WriteTest extends Component {
+export default class WriteTest extends Component {
+render() {
+    return(
+        <View>
+            </View>
+    )
+
+}
+}
+
+

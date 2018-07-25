@@ -18,7 +18,7 @@ export default class StudentView extends Component {
                    
                     
         <CardSection>
-            <Button>
+            <Button onPress = {() => this.props.navigation.navigate ('WriteTest')}>
                 Skriv test
             </Button>
     
