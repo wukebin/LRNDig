@@ -8,6 +8,7 @@ const Input = ({label, value, onChangeText, placeHolder,secret}) => {
             <TextInput
             secureTextEntry={secret}
             placeholder= {placeHolder}
+            autoCapitalize={'none'}
             autoCorrect={false}
             style = {styles.inputStyle}
             value= {value}

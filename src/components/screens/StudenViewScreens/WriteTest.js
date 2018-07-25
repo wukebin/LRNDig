@@ -8,6 +8,7 @@ export default class WriteTest extends Component {
 render() {
     return(
         <View>
+            
             </View>
     )
 
