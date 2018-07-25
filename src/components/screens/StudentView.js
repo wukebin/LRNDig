@@ -12,12 +12,15 @@ export default class StudentView extends Component {
     state= {
         name: this.props.navigation.state.params.name
     }
+    Capitalize(str){
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
     render() {
         return (
             <View style={{ flex: 1 }}>
                 <Header
                     leftComponent={{ icon: 'menu', color: '#fff' }}
-                    centerComponent={{ text: this.state.name, style: { color: '#fff', fontSize: 24 } }}
+                    centerComponent={{ text: this.Capitalize(state.name), style: { color: '#fff', fontSize: 24 } }}
                     rightComponent={{ icon: 'home', color: '#fff' }}
                 />
 
