@@ -10,8 +10,13 @@ export default class TeacherView extends Component {
 
     render() {
         return (
-            <Card style= {styles.container}>
-                <Header
+             
+    <Card 
+    containerStyle= {{
+                flex:1,
+                justifyContent: 'space-between'
+            }}>   
+            <Header
                     leftComponent={{ icon: 'menu', color: '#fff' }}
                     centerComponent={{ text: this.state.name, style: { color: '#fff' } }}
                     rightComponent={{ icon: 'home', color: '#fff' }}
@@ -58,21 +63,3 @@ export default class TeacherView extends Component {
         );
     }
 }
-
-const buttonStyles = {
-    buttonStyle: {
-        large: true,
-        raised: true,
-        backgroundColor: '#20a1d2'
-
-    }
-}
-const styles = StyleSheet.create({
-    container: {
-        flex:1,
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: 10
-
-    },
-})
