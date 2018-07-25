@@ -73,7 +73,7 @@ export default class LoginForm extends Component {
                 <Card>
                     <Tile
                         imageSrc={require('./images/elephant.jpg')}
-                        height={250}
+                        height={340}
                         imageContainerStyle={{
                             borderBottomWidth: 4, borderBottomColor: '#e6e6e6'
                         }}
