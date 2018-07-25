@@ -8,6 +8,9 @@ export default class TeacherView extends Component {
         name: this.props.navigation.state.params.name,
     }
 
+    Capitalize(str){
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
     render() {
         return (
              
@@ -18,14 +21,14 @@ export default class TeacherView extends Component {
             }}>   
             <Header
                     leftComponent={{ icon: 'menu', color: '#fff' }}
-                    centerComponent={{ text: this.state.name, style: { color: '#fff' } }}
+                    centerComponent={{ text: this.Capitalize(this.state.name), style: { color: '#fff', fontSize: 24 } }}
                     rightComponent={{ icon: 'home', color: '#fff' }}
                 />
             
 
             
                 <Button
-                    onPress={() => this.props.navigation.navigate('CreateTestView')}
+                    onPress={() => this.props.navigation.navigate('CreateTestView', {name: this.state.name})}
                     title='Skapa Prov'
                     containerViewStyle = {{marginBottom: 5, marginTop: 5}}
                     raised
