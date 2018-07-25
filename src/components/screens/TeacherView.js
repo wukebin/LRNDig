@@ -13,19 +13,19 @@ export default class TeacherView extends Component {
     }
     render() {
         return (
-             
-    <Card 
-    containerStyle= {{
-                flex:1,
-                justifyContent: 'space-between'
-            }}>   
-            <Header
+            <View style ={{flex:1}}>
+             <Header
                     leftComponent={{ icon: 'menu', color: '#fff' }}
+<<<<<<< HEAD
                     centerComponent={{ text: this.Capitalize(this.state.name), style: { color: '#fff', fontSize: 24 } }}
+=======
+                    centerComponent={{ text: this.state.name, style: { color: '#fff', fontSize:24 } }}
+>>>>>>> d4dee3beb2b1371bf88e471294a85284d2f06336
                     rightComponent={{ icon: 'home', color: '#fff' }}
                 />
             
-
+            
+            <View style= {{justifyContent:'center', flex:1}}>
             
                 <Button
                     onPress={() => this.props.navigation.navigate('CreateTestView', {name: this.state.name})}
@@ -62,7 +62,8 @@ export default class TeacherView extends Component {
                     backgroundColor='#2f7399'
                     borderRadius={10}
                 />
-            </Card>
+            </View>
+            </View>
         );
     }
 }
