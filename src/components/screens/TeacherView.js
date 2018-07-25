@@ -16,11 +16,7 @@ export default class TeacherView extends Component {
             <View style ={{flex:1}}>
              <Header
                     leftComponent={{ icon: 'menu', color: '#fff' }}
-<<<<<<< HEAD
                     centerComponent={{ text: this.Capitalize(this.state.name), style: { color: '#fff', fontSize: 24 } }}
-=======
-                    centerComponent={{ text: this.state.name, style: { color: '#fff', fontSize:24 } }}
->>>>>>> d4dee3beb2b1371bf88e471294a85284d2f06336
                     rightComponent={{ icon: 'home', color: '#fff' }}
                 />
             
