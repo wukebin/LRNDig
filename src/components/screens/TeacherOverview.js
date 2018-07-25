@@ -1,17 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, ListView, TouchableHighlight } from 'react-native';
-import { Header, Button, Card, CardSection, Spinner } from '../common';
+import { Header, Spinner } from '../common';
 import firebase from 'firebase';
-
-var config = {
-    apiKey: "AIzaSyDsEbcjz7pEuZx5Xj47RyIYxVonSNpWUJo",
-    authDomain: "lrndig-fd676.firebaseapp.com",
-    databaseURL: "https://lrndig-fd676.firebaseio.com",
-    projectId: "lrndig-fd676",
-    storageBucket: "lrndig-fd676.appspot.com",
-    messagingSenderId: "550361281799"
-};
-
 
 export default class TeacherOverview extends Component {
     constructor() {
