@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, Image, ScrollView } from 'react-native';
+import { Text, StyleSheet, Image, ScrollView, ImageBackground } from 'react-native';
 import { Card, CardSection, Input, Spinner, Header } from './common';
 import { Button, Icon, Tile } from 'react-native-elements';
 import firebase from 'firebase';
@@ -62,22 +62,21 @@ export default class LoginForm extends Component {
 
     }
 
-    loginFailed() {
+    loginFailed() { 
         this.setState({ loading: false, error: 'Fel användarnamn eller lösenord.', email: '', password: '' })
     }
 
+   
 
     render() {
         return (
+            <ImageBackground
+            source={require('./images/bg.jpg')}
+            style = {{ width: '100%', height: '100%'}}>
+            <Image source= {require('./images/elephant1.png')} style = {{ width:300, height:340,alignSelf:'center'}}/>
             <ScrollView>
                 <Card>
-                    <Tile
-                        imageSrc={require('./images/elephant.jpg')}
-                        height={340}
-                        imageContainerStyle={{
-                            borderBottomWidth: 4, borderBottomColor: '#e6e6e6'
-                        }}
-                    />
+                   
                     {/* <Image source= {require('./images/elephant.jpg')} style = {{ width:100, height:100,alignSelf:'center'}}/> */}
 
                     <CardSection>
@@ -138,6 +137,7 @@ export default class LoginForm extends Component {
                     </Text>
                 </Card>
             </ScrollView>
+            </ImageBackground>
         );
     }
 }
