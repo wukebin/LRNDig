@@ -7,66 +7,12 @@ import firebase from 'firebase';
 
 export default class LoginForm extends Component {
 
-
     state = {
         email: '',
         password: '',
         error: '',
         loading: false,
     };
-
-    renderButton() {
-        if (this.state.loading) {
-            return <Spinner size="small" />
-        }
-
-        return (
-            <Button
-                onPress={this.onButtonPress.bind(this)}
-                containerViewStyle={{ flex: 1, justifyContent: 'center', alignSelf: 'center' }}
-                title='Logga in'
-                raised
-                large
-                backgroundColor='#2f7399'
-                icon={{ name: 'input' }}
-                borderRadius={10}
-
-            />
-
-
-        );
-    }
-    onButtonPress() {
-        const { email, password } = this.state;
-        this.setState({ error: '', loading: true })
-        firebase.auth().signInWithEmailAndPassword(email, password)
-            .then(this.loginSuccess.bind(this))
-            .catch(this.loginFailed.bind(this));
-    }
-
-
-    loginSuccess() {
-        var userType = false;
-        var email = this.state.email.replace('.se', '')
-
-        firebase.database().ref('users/' + email).once('value', (dataSnap) => {
-            userType = dataSnap.child('teacher').val();
-            if (userType) {
-                this.props.navigation.navigate('TeacherView', { name: email.replace('@eken', '') });
-            }
-            else {
-                this.props.navigation.navigate('StudentView', { name: email.replace('@eken', '') });
-            }
-        })
-        this.setState({ loading: false });
-
-    }
-
-    loginFailed() { 
-        this.setState({ loading: false, error: 'Fel användarnamn eller lösenord.', email: '', password: '' })
-    }
-
-   
 
     render() {
         return (
@@ -79,34 +25,25 @@ export default class LoginForm extends Component {
                    
                     {/* <Image source= {require('./images/elephant.jpg')} style = {{ width:100, height:100,alignSelf:'center'}}/> */}
 
-                    <CardSection>
+                    
                         <Input
-                            label="Användarnamn"
+                            icon= 'user'
                             value={this.state.email}
                             onChangeText={email => this.setState({ email })}
-                            placeHolder='abc123@student.se'
+                            placeHolder='E-postadress'
 
                         />
-                    </CardSection>
-
-                    <CardSection>
+                  
                         <Input
-                            label="Lösenord"
+                            icon= 'lock'
                             value={this.state.password}
                             onChangeText={password => this.setState({ password })}
-                            placeHolder='•••••••'
+                            placeHolder='Lösenord'
                             secret
                         />
-                    </CardSection>
 
 
-
-                    <CardSection>
                         {this.renderButton()}
-                        {/* <Button onPress={this.onButtonPress.bind(this)}>
-                    Log In
-                    </Button> */}
-                    </CardSection>
 
 
                     {/* FOR TEST PURPOSES ONLY */}
@@ -140,8 +77,59 @@ export default class LoginForm extends Component {
             </ImageBackground>
         );
     }
+
+
+renderButton() {
+    if (this.state.loading) {
+        return <Spinner size="small" />
+    }
+
+    return (
+        <Button
+            onPress={this.onButtonPress.bind(this)}
+            containerViewStyle={{ flex: 1, justifyContent: 'center', alignSelf: 'center' }}
+            title='Logga in'
+            raised
+            large
+            backgroundColor='#2f7399'
+            icon={{ name: 'input' }}
+            borderRadius={10}
+
+        />
+
+
+    );
+}
+onButtonPress() {
+    const { email, password } = this.state;
+    this.setState({ error: '', loading: true })
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(this.loginSuccess.bind(this))
+        .catch(this.loginFailed.bind(this));
 }
 
+
+loginSuccess() {
+    var userType = false;
+    var email = this.state.email.replace('.se', '')
+
+    firebase.database().ref('users/' + email).once('value', (dataSnap) => {
+        userType = dataSnap.child('teacher').val();
+        if (userType) {
+            this.props.navigation.navigate('TeacherView', { name: email.replace('@eken', '') });
+        }
+        else {
+            this.props.navigation.navigate('StudentView', { name: email.replace('@eken', '') });
+        }
+    })
+    this.setState({ loading: false });
+
+}
+
+loginFailed() {
+    this.setState({ loading: false, error: 'Fel användarnamn eller lösenord.', email: '', password: '' })
+}
+};
 const styles = StyleSheet.create({
     errorText: {
         fontSize: 20,

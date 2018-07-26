@@ -65,9 +65,9 @@ export default class App extends Component {
 
 const AppNavigator = StackNavigator({
     LoginForm: { screen: LoginForm},
+    ResultatList: { screen: ResultatList},
     TeacherView: { screen: TeacherView },
     StudentView: { screen: StudentView },
-    ResultatList: { screen: ResultatList},
     Overview: {screen: TeacherOverview},
     Details: {screen: OverviewDetails},
     CreateTestView: {screen: CreateTestView},

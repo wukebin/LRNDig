@@ -1,10 +1,18 @@
 import React from 'react';
 import {TextInput, View, Text, StyleSheet} from 'react-native';
+import {Icon} from 'react-native-elements';
 
-const Input = ({label, value, onChangeText, placeHolder,secret}) => {
+const Input = ({icon, value, onChangeText, placeHolder,secret}) => {
     return(
         <View style={styles.containerStyle}>
-            <Text style={styles.labelStyle}>{label}</Text>
+           <Icon
+           name= {icon}
+           type= 'evilicon'
+           containerStyle = {{backgroundColor:'transparent'}}
+           iconStyle={{opacity:0.5}}
+           size={36}
+           />
+           
             <TextInput
             secureTextEntry={secret}
             placeholder= {placeHolder}
