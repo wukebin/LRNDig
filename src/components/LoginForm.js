@@ -17,13 +17,14 @@ export default class LoginForm extends Component {
     render() {
         return (
             <ScrollView>
-            <ImageBackground
-                source={require('./images/bg.jpg')}
-                style={{ width: '100%', height: '100%' }}
-                resizeMode = 'stretch'
+                <ImageBackground
+                    source={require('./images/bg.jpg')}
+                    style={{ width: '100%', height: '100%' }}
                 >
-                    <Image source={require('./images/elephant1.png')} style={{ width: 300, height: 340, alignSelf: 'center' }} />
 
+                    {/* Reducing width and height on elephant makes parent comps smaller, doesnt even work when adding flex to parent comp */}
+
+                    <Image source={require('./images/elephant1.png')} style={{width:300, height:300, alignSelf: 'center', resizeMode:'center'}} />
 
                     <Input
                         icon='user'
@@ -49,25 +50,25 @@ export default class LoginForm extends Component {
 
 
                     {/* FOR TEST PURPOSES ONLY */}
-                        <CardSection>
-                            <Icon
-                                raised
-                                size={50}
-                                backgroundColor='#2f7399'
-                                name='school'
-                                onPress={() => this.props.navigation.navigate('TeacherView', { name: 'Jenny' })}
-                            />
+                    <CardSection>
+                        <Icon
+                            raised
+                            size={50}
+                            backgroundColor='#2f7399'
+                            name='school'
+                            onPress={() => this.props.navigation.navigate('TeacherView', { name: 'Jenny' })}
+                        />
 
-                            <Icon
-                                raised
-                                size={50}
-                                large
-                                backgroundColor='#2f7399'
-                                name='group'
-                                onPress={() => this.props.navigation.navigate('StudentView', { name: 'Joel' })} />
-                        </CardSection>
-            </ImageBackground>
-                </ScrollView>
+                        <Icon
+                            raised
+                            size={50}
+                            large
+                            backgroundColor='#2f7399'
+                            name='group'
+                            onPress={() => this.props.navigation.navigate('StudentView', { name: 'Joel' })} />
+                    </CardSection>
+                </ImageBackground>
+            </ScrollView>
         );
     }
 
@@ -80,15 +81,15 @@ export default class LoginForm extends Component {
         return (
             <Button
                 onPress={this.onButtonPress.bind(this)}
-                containerViewStyle={{ flex: 1, width: '95%',alignItems: 'center', alignSelf: 'center', opacity: 0.67, padding:1.5}}
-                buttonStyle = {{ width:'100%', alignItems: 'center',paddingRight:50}}
+                containerViewStyle={{ width: '95%', opacity: 0.67, padding: 1.5, alignSelf: 'center' }}
+                buttonStyle={{ width: '100%', alignItems: 'center', paddingRight: 40 }}
                 title='Logga in'
                 raised
                 large
                 backgroundColor='#2f7399'
                 icon={{ name: 'unlock', type: 'evilicon', size: 36 }}
                 borderRadius={100}
-                
+
 
             />
 
@@ -129,7 +130,7 @@ const styles = StyleSheet.create({
     errorText: {
         fontSize: 20,
         alignSelf: 'center',
-        color: 'red'
+        color: '#cd0000'
     },
 
     successText: {
