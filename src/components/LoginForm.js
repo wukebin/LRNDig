@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, Image, ScrollView } from 'react-native';
+import { Text, StyleSheet, Image, ScrollView , ImageBackground} from 'react-native';
 import { Card, CardSection, Input, Spinner, Header } from './common';
 import { Button, Icon, Tile } from 'react-native-elements';
 import firebase from 'firebase';
@@ -69,6 +69,10 @@ export default class LoginForm extends Component {
 
     render() {
         return (
+            <ImageBackground
+            source={require('./images/bg.jpg')}
+            style = {{width: '100%', height: '100%'}}
+            >
             <ScrollView>
                 <Card>
                     <Tile
@@ -138,6 +142,7 @@ export default class LoginForm extends Component {
                     </Text>
                 </Card>
             </ScrollView>
+            </ImageBackground>
         );
     }
 }
