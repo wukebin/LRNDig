@@ -52,10 +52,10 @@ export default class LoginForm extends Component {
         firebase.database().ref('users/' + email).once('value', (dataSnap) => {
             userType = dataSnap.child('teacher').val();
             if (userType) {
-                this.props.navigation.navigate('TeacherView', { name: email.replace('@eken','') });
+                this.props.navigation.navigate('TeacherView', { name: email.replace('@eken', '') });
             }
             else {
-                this.props.navigation.navigate('StudentView', {name: email.replace('@eken', '')});
+                this.props.navigation.navigate('StudentView', { name: email.replace('@eken', '') });
             }
         })
         this.setState({ loading: false });
@@ -131,7 +131,7 @@ export default class LoginForm extends Component {
                             large
                             backgroundColor='#2f7399'
                             name='group'
-                            onPress={() => this.props.navigation.navigate('StudentView')} />
+                            onPress={() => this.props.navigation.navigate('StudentView', {name: 'Joel'})} />
                     </CardSection>
                     <Text style={styles.errorText}>
                         {this.state.error}
