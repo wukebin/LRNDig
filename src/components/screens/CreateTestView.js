@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, TextInput, ScrollView } from 'react-native';
 import firebase from 'firebase';
-import { Header, Card, QuestionInput } from '../common';
+import { Card, QuestionInput } from '../common';
+import {Header } from 'react-native-elements'
 
 
 
@@ -10,8 +11,8 @@ export default class CreateTestView extends Component {
         super(props)
         this.state = {
             id: 1,
-            textInput: []
-
+            textInput: [],
+            name: this.props.navigation.state.params.name
         };
     }
 
@@ -22,7 +23,11 @@ export default class CreateTestView extends Component {
         return (
             <View style={{ flex: 1 }}>
     
-            <Header centerComponent={{ text: 'Prov', style:{color: '#fff', fontSize: 30}}}/>
+    <Header
+                    leftComponent={{ icon: 'menu', color: '#fff' }}
+                    centerComponent={{ text: this.state.name, style: { color: '#fff', fontSize: 24 } }}
+                    rightComponent={{ icon: 'home', color: '#fff' }}
+                />
         <ScrollView>
         <Card>
         

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, ImageBackground } from 'react-native';
 import { Header, Button, Card, Divider } from 'react-native-elements';
 
 
@@ -8,21 +8,32 @@ export default class TeacherView extends Component {
         name: this.props.navigation.state.params.name,
     }
 
+    Capitalize(str){
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
     render() {
         return (
-            <Card style= {styles.container}>
-                <Header
+            <View style ={{flex:1}}>
+            <ImageBackground
+                source= {require('../images/bg.jpg')}
+                style={{width: '100%', height: '100%'}}
+                >
+                 <Header
                     leftComponent={{ icon: 'menu', color: '#fff' }}
-                    centerComponent={{ text: this.state.name, style: { color: '#fff' } }}
+                    centerComponent={{ text: this.Capitalize(this.state.name), style: { color: '#fff', fontSize: 24 } }}
                     rightComponent={{ icon: 'home', color: '#fff' }}
+                    outerContainerStyles={{borderBottomWidth:0, elevation:2}}
+                    backgroundColor= '#2f7399'
+                
                 />
             
-
+            
+            <View style= {{justifyContent:'center', flex:1}}>
             
                 <Button
-                    onPress={() => this.props.navigation.navigate('CreateTestView')}
+                    onPress={() => this.props.navigation.navigate('CreateTestView', {name: this.state.name})}
                     title='Skapa Prov'
-                    containerViewStyle = {{marginBottom: 5, marginTop: 5}}
+                    containerViewStyle = {{marginBottom: 5}}
                     raised
                     large
                     backgroundColor='#2f7399'
@@ -54,25 +65,9 @@ export default class TeacherView extends Component {
                     backgroundColor='#2f7399'
                     borderRadius={10}
                 />
-            </Card>
+            </View>
+            </ImageBackground>
+            </View>
         );
     }
 }
-
-const buttonStyles = {
-    buttonStyle: {
-        large: true,
-        raised: true,
-        backgroundColor: '#20a1d2'
-
-    }
-}
-const styles = StyleSheet.create({
-    container: {
-        flex:1,
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: 10
-
-    },
-})

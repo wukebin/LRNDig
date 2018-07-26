@@ -1,40 +1,61 @@
-import React, {Component} from 'react';
-import {  View } from 'react-native';
+import React, { Component } from 'react';
+import { View , ImageBackground} from 'react-native';
 import { Button, Card, CardSection } from '../common';
-import {PricingCard} from 'react-native-elements';
+import { PricingCard, Header } from 'react-native-elements';
 
 
 
 //just presentation of data-> Functional
 
 export default class StudentView extends Component {
-    render() {
-        return( 
-            
-            
 
-            <Card >
-              
-                   
-                    
-        <CardSection>
-            <Button>
-                Skriv test
+    state= {
+        name: this.props.navigation.state.params.name,
+    }
+
+    Capitalize(str){
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+    render() {
+        return (
+            <View style={{ flex: 1 }}>
+            <ImageBackground 
+            source= {require('../images/bg.jpg')}
+            style= {{width: '100%', height: '100%'}}
+            >
+                <Header
+                    leftComponent={{ icon: 'menu', color: '#fff' }}
+                    centerComponent={{ text: this.Capitalize(this.state.name), style: { color: '#fff', fontSize: 24 } }}
+                    rightComponent={{ icon: 'home', color: '#fff' }}
+                />
+
+
+                <Card >
+
+
+
+                    <CardSection>
+                        <Button onPress={() => this.props.navigation.navigate('WriteTest')}>
+                            Skriv test
             </Button>
-    
-            
-            <Button onPress= {()=> this.props.navigation.navigate ('ResultatList')}>
-                Resultat
+
+
+                        <Button onPress={() => this.props.navigation.navigate('ResultatList')}>
+                            Resultat
             </Button>
-                
-            </CardSection>
-            <PricingCard
-  color='#4f9deb'
-  title='Free'
-  price='$0'
-  info={['1 User', 'Basic Support', 'All Core Features']}
-  button={{ title: 'GET STARTED', icon: 'flight-takeoff' }}
-/>
-    
-    </Card>)
-};};
+
+                    </CardSection>
+                    <PricingCard
+                        color='#4f9deb'
+                        title='Free'
+                        price='$0'
+                        info={['1 User', 'Basic Support', 'All Core Features']}
+                        button={{ title: 'GET STARTED', icon: 'flight-takeoff' }}
+                    />
+
+                </Card>
+                </ImageBackground>
+            </View>
+        )
+    };
+};

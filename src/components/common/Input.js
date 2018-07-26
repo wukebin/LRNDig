@@ -8,6 +8,7 @@ const Input = ({label, value, onChangeText, placeHolder,secret}) => {
             <TextInput
             secureTextEntry={secret}
             placeholder= {placeHolder}
+            autoCapitalize={'none'}
             autoCorrect={false}
             style = {styles.inputStyle}
             value= {value}
@@ -25,13 +26,13 @@ const styles = StyleSheet.create({
         paddingLeft: 5,
         fontSize: 18,
         lineHeight:23,
-        flex:2
+        flex:3
 
     },
     labelStyle:{
         fontSize: 18,
         paddingLeft: 20,
-        flex:1
+        flex:2
     },
     containerStyle: {
         height:40,

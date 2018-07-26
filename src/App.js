@@ -15,6 +15,7 @@ import OverviewDetails from './components/screens/OverviewDetails';
 import CreateTestView from './components/screens/CreateTestView';
 import { StackNavigator } from 'react-navigation';
 import ResultatList from './components/screens/StudenViewScreens/ResultatList';
+import WriteTest from './components/screens/StudenViewScreens/WriteTest';
 import DatabaseReadTest from './components/screens/DatabaseReadTest';
 
 var config = {
@@ -69,7 +70,8 @@ const AppNavigator = StackNavigator({
     StudentView: { screen: StudentView },
     Overview: {screen: TeacherOverview},
     Details: {screen: OverviewDetails},
-    CreateTestView: {screen: CreateTestView}
+    CreateTestView: {screen: CreateTestView},
+    WriteTest: {screen: WriteTest}
  },
   {headerMode :'none'}
 

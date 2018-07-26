@@ -14,12 +14,13 @@ export default class OverviewDetails extends Component {
 
   render() {
     return (
-      <View style= {{alignItems:'center', flex:5}}>
+      <View style= {{alignItems:'center', flex:1}}>
         <Image
-        source ={require('../images/joelflak.jpg')} style ={{flex:1}}
+        source ={require('../images/joelflak.jpg')} style ={{width: 200, height: 200}}
         />
       <Text>{this.state.name}</Text>
       <Text>{this.state.age}</Text>
+      
       </View>
     );
   }
