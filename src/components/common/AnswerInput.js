@@ -27,7 +27,7 @@ class AnswerInput extends Component {
                 <CheckBox style={{ flex: 1 }} 
                 checked={this.state.checked}
                  onPress={() => this.setState({checked: !this.state.checked})} 
-                    
+                    containerStyle={{backgroundColor: 'transparent', borderColor: 'black'}}
                 />
                 </View></View>);
         this.setState({ answers, i });
@@ -56,19 +56,19 @@ const styles = {
     containerStyle: {
         borderBottomWidth: 1,
         padding: 5,
-        backgroundColor: '#fff',
+        backgroundColor: 'transparent',
         justifyContent: 'flex-start',
         flexDirection: 'row',
-        borderColor: '#ddd',
+        borderColor: 'transparent',
         position: 'relative'
     },
     containerStyle1: {
         borderBottomWidth: 1,
         padding: 5,
-        backgroundColor: '#fff',
+        backgroundColor: 'transparent',
         justifyContent: 'flex-start',
         flexDirection: 'column',
-        borderColor: '#ddd',
+        borderColor: 'transparent',
         position: 'relative'
 
     },

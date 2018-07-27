@@ -16,43 +16,17 @@ export default class LoginForm extends Component {
 
     render() {
         return (
-<<<<<<< HEAD
-           <ScrollView>
-                    <ImageBackground
-                source={require('./images/bg.jpg')}
-                style={{ width: '100%', height: '100%' }}>
-                <Image source={require('./images/elephant1.png')} style={{ width: 300, height: 340, alignSelf: 'center' }} />
-                
-
-                        {/* <Image source= {require('./images/elephant.jpg')} style = {{ width:100, height:100,alignSelf:'center'}}/> */}
-
-
-                        <Input
-                            icon='user'
-                            value={this.state.email}
-                            onChangeText={email => this.setState({ email })}
-                            placeHolder='E-postadress'
-
-                        />
-
-                        <Input
-                            icon='lock'
-                            value={this.state.password}
-                            onChangeText={password => this.setState({ password })}
-                            placeHolder='Lösenord'
-                            secret
-                        />
-=======
-            <ScrollView>
             <ImageBackground
             source={require('./images/bg.jpg')}
-            style={{ width: '100%', height: '100%' }}
+            style={{ width: '100%', height: '100%'}}
+            
             >
+            <ScrollView contentContainerStyle={{paddingTop: 100}}>
 
                     {/* Reducing width and height on elephant makes parent comps smaller, doesnt even work when adding flex to parent comp */}
 
-                    <Image source={require('./images/elephant1.png')} style={{width:200, height:200, alignSelf: 'center', resizeMode:'center'}} />
->>>>>>> 57e82932978d523a6e6b7866b027c85cca9fa2f2
+                    <Image source={require('./images/elephant1.png')}
+                     style={{width:220, height:220, alignSelf: 'center', resizeMode:'center'}} />
 
                     <Input
                         icon='user'
@@ -68,40 +42,9 @@ export default class LoginForm extends Component {
                         onChangeText={password => this.setState({ password })}
                         placeHolder='Lösenord'
                         secret
+                        opacity = '0.67'
                     />
 
-<<<<<<< HEAD
-                        {/* FOR TEST PURPOSES ONLY */}
-                        {/* <Card> */}
-                        <CardSection
-                            style={{
-                                flex: 1,
-                                flexDirection: 'row',
-                                backgroundColor: 'transparent'
-                            }}>
-                            <Icon
-                                raised
-                                size={50}
-                                backgroundColor='#2f7399'
-                                name='school'
-                                onPress={() => this.props.navigation.navigate('TeacherView', { name: 'Jenny' })}
-                            />
-
-                            <Icon
-                                raised
-                                size={50}
-                                large
-                                backgroundColor='#2f7399'
-                                name='group'
-                                onPress={() => this.props.navigation.navigate('StudentView', { name: 'Joel' })} />
-                        </CardSection>
-                        <Text style={styles.errorText}>
-                            {this.state.error}
-                        </Text>
-                    {/* </Card> */}
-            </ImageBackground>
-                </ScrollView>
-=======
                     <Text style={styles.errorText}>
                         {this.state.error}
                     </Text>
@@ -113,24 +56,25 @@ export default class LoginForm extends Component {
                     <CardSection>
                         <Icon
                             raised
+                            reverse
                             size={50}
-                            backgroundColor='#2f7399'
+                            color='#2f7399'
                             name='school'
                             onPress={() => this.props.navigation.navigate('TeacherView', { name: 'Jenny' })}
                         />
 
                         <Icon
                             raised
+                            reverse
                             size={50}
                             large
-                            backgroundColor='#2f7399'
+                            color='#2f7399'
                             name='group'
                             onPress={() => this.props.navigation.navigate('StudentView', { name: 'Joel' })} />
                     </CardSection>
-                </ImageBackground>
             </ScrollView>
+                </ImageBackground>
                 
->>>>>>> 57e82932978d523a6e6b7866b027c85cca9fa2f2
         );
     }
 
@@ -143,24 +87,15 @@ export default class LoginForm extends Component {
         return (
             <Button
                 onPress={this.onButtonPress.bind(this)}
-<<<<<<< HEAD
-                containerViewStyle={{ flex: 1, justifyContent: 'center', alignSelf: 'center' }}
-=======
                 containerViewStyle={{ width: '95%', opacity: 0.67, padding: 0, alignSelf: 'center' }}
                 buttonStyle={{ width: '100%', alignItems: 'center', paddingRight: 40 }}
->>>>>>> 57e82932978d523a6e6b7866b027c85cca9fa2f2
                 title='Logga in'
                 raised
                 large
                 backgroundColor='#2f7399'
-<<<<<<< HEAD
-                icon={{ name: 'input' }}
-                borderRadius={10}
-=======
                 icon={{ name: 'unlock', type: 'evilicon', size: 36 }}
                 borderRadius={100}
 
->>>>>>> 57e82932978d523a6e6b7866b027c85cca9fa2f2
 
             />
 
@@ -179,24 +114,6 @@ export default class LoginForm extends Component {
     loginSuccess() {
         var userType = false;
         var email = this.state.email.replace('.se', '')
-<<<<<<< HEAD
-
-        firebase.database().ref('users/' + email).once('value', (dataSnap) => {
-            userType = dataSnap.child('teacher').val();
-            if (userType) {
-                this.props.navigation.navigate('TeacherView', { name: email.replace('@eken', '') });
-            }
-            else {
-                this.props.navigation.navigate('StudentView', { name: email.replace('@eken', '') });
-            }
-        })
-        this.setState({ loading: false });
-
-    }
-
-    loginFailed() {
-        this.setState({ loading: false, error: 'Fel användarnamn eller lösenord.', email: '', password: '' })
-=======
 
         firebase.database().ref('users/' + email).once('value', (dataSnap) => {
             userType = dataSnap.child('teacher').val();
@@ -213,7 +130,6 @@ export default class LoginForm extends Component {
 
     loginFailed() {
         this.setState({ loading: false, error: 'Fel e-postadress eller lösenord.', email: '', password: '' })
->>>>>>> 57e82932978d523a6e6b7866b027c85cca9fa2f2
     }
 };
 const styles = StyleSheet.create({
