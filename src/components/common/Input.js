@@ -19,6 +19,7 @@ const Input = ({icon, value, onChangeText, placeHolder,secret}) => {
             autoCapitalize={'none'}
             autoCorrect={false}
             style = {styles.inputStyle}
+            
             value= {value}
             onChangeText={onChangeText}
             />
@@ -31,15 +32,17 @@ const styles = StyleSheet.create({
   
     inputStyle: {
         flex:1,
-        color:'#000',
+        
         fontSize: 20,
         paddingLeft:8,
         paddingRight: 8,
+        opacity: 0.67
 
     },
     containerStyle: {
         flex:1,
         flexDirection: 'row',
+        paddingRight: 15
     },
    
 });

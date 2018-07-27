@@ -16,15 +16,25 @@ export default class LoginForm extends Component {
 
     render() {
         return (
+<<<<<<< HEAD
             <ScrollView>
+=======
+>>>>>>> 2dd20a425e10409322dda5485293009ca22b6458
             <ImageBackground
             source={require('./images/bg.jpg')}
-            style={{ width: '100%', height: '100%' }}
+            style={{ width: '100%', height: '100%'}}
+            
             >
+            <ScrollView contentContainerStyle={{paddingTop: 100}}>
 
                     {/* Reducing width and height on elephant makes parent comps smaller, doesnt even work when adding flex to parent comp */}
 
+<<<<<<< HEAD
                     <Image source={require('./images/elephant1.png')} style={{width:200, height:200, alignSelf: 'center', resizeMode:'center'}} />
+=======
+                    <Image source={require('./images/elephant1.png')}
+                     style={{width:220, height:220, alignSelf: 'center', resizeMode:'center'}} />
+>>>>>>> 2dd20a425e10409322dda5485293009ca22b6458
 
                     <Input
                         icon='user'
@@ -40,6 +50,7 @@ export default class LoginForm extends Component {
                         onChangeText={password => this.setState({ password })}
                         placeHolder='Lösenord'
                         secret
+                        opacity = '0.67'
                     />
 
                     <Text style={styles.errorText}>
@@ -53,22 +64,24 @@ export default class LoginForm extends Component {
                     <CardSection>
                         <Icon
                             raised
+                            reverse
                             size={50}
-                            backgroundColor='#2f7399'
+                            color='#2f7399'
                             name='school'
                             onPress={() => this.props.navigation.navigate('TeacherView', { name: 'Jenny' })}
                         />
 
                         <Icon
                             raised
+                            reverse
                             size={50}
                             large
-                            backgroundColor='#2f7399'
+                            color='#2f7399'
                             name='group'
                             onPress={() => this.props.navigation.navigate('StudentView', { name: 'Joel' })} />
                     </CardSection>
-                </ImageBackground>
             </ScrollView>
+                </ImageBackground>
                 
         );
     }
