@@ -17,14 +17,14 @@ export default class LoginForm extends Component {
     render() {
         return (
             <ScrollView>
-                <ImageBackground
-                    source={require('./images/bg.jpg')}
-                    style={{ width: '100%', height: '100%' }}
-                >
+            <ImageBackground
+            source={require('./images/bg.jpg')}
+            style={{ width: '100%', height: '100%' }}
+            >
 
                     {/* Reducing width and height on elephant makes parent comps smaller, doesnt even work when adding flex to parent comp */}
 
-                    <Image source={require('./images/elephant1.png')} style={{width:300, height:300, alignSelf: 'center', resizeMode:'center'}} />
+                    <Image source={require('./images/elephant1.png')} style={{width:200, height:200, alignSelf: 'center', resizeMode:'center'}} />
 
                     <Input
                         icon='user'
@@ -69,6 +69,7 @@ export default class LoginForm extends Component {
                     </CardSection>
                 </ImageBackground>
             </ScrollView>
+                
         );
     }
 
@@ -81,7 +82,7 @@ export default class LoginForm extends Component {
         return (
             <Button
                 onPress={this.onButtonPress.bind(this)}
-                containerViewStyle={{ width: '95%', opacity: 0.67, padding: 1.5, alignSelf: 'center' }}
+                containerViewStyle={{ width: '95%', opacity: 0.67, padding: 0, alignSelf: 'center' }}
                 buttonStyle={{ width: '100%', alignItems: 'center', paddingRight: 40 }}
                 title='Logga in'
                 raised
