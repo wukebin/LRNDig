@@ -10,7 +10,7 @@ const Input = ({icon, value, onChangeText, placeHolder,secret}) => {
            type= 'evilicon'
            containerStyle = {{backgroundColor:'transparent'}}
            iconStyle={{opacity:0.5}}
-           size={36}
+           size={48}
            />
            
             <TextInput
@@ -28,27 +28,20 @@ const Input = ({icon, value, onChangeText, placeHolder,secret}) => {
 };
 
 const styles = StyleSheet.create({
+  
     inputStyle: {
+        flex:1,
         color:'#000',
-        paddingRight: 5,
-        paddingLeft: 5,
-        fontSize: 18,
-        lineHeight:23,
-        flex:3
+        fontSize: 20,
+        paddingLeft:8,
+        paddingRight: 8,
 
-    },
-    labelStyle:{
-        fontSize: 18,
-        paddingLeft: 20,
-        flex:2
     },
     containerStyle: {
-        height:40,
         flex:1,
         flexDirection: 'row',
-        alignItems: 'center'
-
-    }
+    },
+   
 });
 
 export  {Input};
