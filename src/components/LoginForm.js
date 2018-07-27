@@ -42,7 +42,7 @@ export default class LoginForm extends Component {
                         onChangeText={password => this.setState({ password })}
                         placeHolder='Lösenord'
                         secret
-                        opacity = '0.67'
+                       
                     />
 
                     <Text style={styles.errorText}>
