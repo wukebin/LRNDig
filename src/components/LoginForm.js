@@ -16,10 +16,7 @@ export default class LoginForm extends Component {
 
     render() {
         return (
-<<<<<<< HEAD
-            <ScrollView>
-=======
->>>>>>> 2dd20a425e10409322dda5485293009ca22b6458
+            
             <ImageBackground
             source={require('./images/bg.jpg')}
             style={{ width: '100%', height: '100%'}}
@@ -29,12 +26,7 @@ export default class LoginForm extends Component {
 
                     {/* Reducing width and height on elephant makes parent comps smaller, doesnt even work when adding flex to parent comp */}
 
-<<<<<<< HEAD
                     <Image source={require('./images/elephant1.png')} style={{width:200, height:200, alignSelf: 'center', resizeMode:'center'}} />
-=======
-                    <Image source={require('./images/elephant1.png')}
-                     style={{width:220, height:220, alignSelf: 'center', resizeMode:'center'}} />
->>>>>>> 2dd20a425e10409322dda5485293009ca22b6458
 
                     <Input
                         icon='user'
