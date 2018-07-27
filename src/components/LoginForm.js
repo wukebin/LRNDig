@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, Image, ScrollView, ImageBackground } from 'react-native';
+import { Text, StyleSheet, Image, ScrollView, ImageBackground, View, KeyboardAvoidingView } from 'react-native';
 import { Card, CardSection, Input, Spinner, Header } from './common';
 import { Button, Icon, Tile } from 'react-native-elements';
 import firebase from 'firebase';
@@ -16,32 +16,33 @@ export default class LoginForm extends Component {
 
     render() {
         return (
-            <ScrollView>
-            <ImageBackground
-            source={require('./images/bg.jpg')}
-            style={{ width: '100%', height: '100%' }}
-            >
 
+            <ImageBackground
+                source={require('./images/bg.jpg')}
+                style={styles.backgroundImage}
+                imageStyle={styles.imageStyle}
+            >
+                <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'flex-start' }}>
                     {/* Reducing width and height on elephant makes parent comps smaller, doesnt even work when adding flex to parent comp */}
 
-                    <Image source={require('./images/elephant1.png')} style={{width:200, height:200, alignSelf: 'center', resizeMode:'center'}} />
+                    <Image source={require('./images/elephant1.png')} style={{ marginTop: 60, height: 200, width: 200, alignSelf: 'center', opacity: 0.8 }} />
+                    <View style={{ marginTop: 20 }}>
+                        <Input
+                            icon='user'
+                            value={this.state.email}
+                            onChangeText={email => this.setState({ email })}
+                            placeHolder='E-postadress'
 
-                    <Input
-                        icon='user'
-                        value={this.state.email}
-                        onChangeText={email => this.setState({ email })}
-                        placeHolder='E-postadress'
+                        />
 
-                    />
-
-                    <Input
-                        icon='lock'
-                        value={this.state.password}
-                        onChangeText={password => this.setState({ password })}
-                        placeHolder='Lösenord'
-                        secret
-                    />
-
+                        <Input
+                            icon='lock'
+                            value={this.state.password}
+                            onChangeText={password => this.setState({ password })}
+                            placeHolder='Lösenord'
+                            secret
+                        />
+                    </View>
                     <Text style={styles.errorText}>
                         {this.state.error}
                     </Text>
@@ -50,7 +51,7 @@ export default class LoginForm extends Component {
 
 
                     {/* FOR TEST PURPOSES ONLY */}
-                    <CardSection>
+                    {/* <CardSection>
                         <Icon
                             raised
                             size={50}
@@ -66,10 +67,9 @@ export default class LoginForm extends Component {
                             backgroundColor='#2f7399'
                             name='group'
                             onPress={() => this.props.navigation.navigate('StudentView', { name: 'Joel' })} />
-                    </CardSection>
-                </ImageBackground>
-            </ScrollView>
-                
+                        </CardSection> */}
+                </ScrollView>
+            </ImageBackground>
         );
     }
 
@@ -118,8 +118,8 @@ export default class LoginForm extends Component {
             else {
                 this.props.navigation.navigate('StudentView', { name: email.replace('@eken', '') });
             }
+            this.setState({ loading: false });
         })
-        this.setState({ loading: false });
 
     }
 
@@ -138,5 +138,13 @@ const styles = StyleSheet.create({
         fontSize: 20,
         alignSelf: 'center',
         color: 'green'
+    },
+    imageStyle: {
+        resizeMode: 'cover'
+    },
+    backgroundImage: {
+        flex: 1,
+        justifyContent: 'center'
     }
+
 })
