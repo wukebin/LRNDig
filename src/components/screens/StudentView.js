@@ -27,6 +27,8 @@ export default class StudentView extends Component {
                     leftComponent={{ icon: 'menu', color: '#fff' }}
                     centerComponent={{ text: this.Capitalize(this.state.name), style: { color: '#fff', fontSize: 24 } }}
                     rightComponent={{ icon: 'home', color: '#fff' }}
+                    outerContainerStyles={{borderBottomWidth:0, elevation:2}}
+                    backgroundColor= '#2f7399'
                 />
 
 
