@@ -75,19 +75,19 @@ const styles = {
     containerStyle: {
         borderBottomWidth: 1,
         padding: 5,
-        backgroundColor: '#fff',
+        backgroundColor: 'transparent',
         justifyContent: 'flex-start',
         flexDirection: 'row',
-        borderColor: '#ddd',
+        borderColor: 'transparent',
         position: 'relative'
     },
     containerStyle1: {
         borderBottomWidth: 1,
         padding: 5,
-        backgroundColor: '#fff',
+        backgroundColor: 'transparent',
         justifyContent: 'flex-start',
         flexDirection: 'column',
-        borderColor: '#ddd',
+        borderColor: 'transparent',
         position: 'relative'
 
     },
