@@ -65,7 +65,10 @@ export default class App extends Component {
 
 const AppNavigator = StackNavigator({
 <<<<<<< HEAD
+<<<<<<< HEAD
     
+=======
+>>>>>>> 9299aa21c3036ba2e178b17637f246bfa407f237
 =======
 >>>>>>> 9299aa21c3036ba2e178b17637f246bfa407f237
     LoginForm: { screen: LoginForm},
